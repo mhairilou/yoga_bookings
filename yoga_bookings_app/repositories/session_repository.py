@@ -29,7 +29,11 @@ def delete_all():
     run_sql(sql)
 
 # DELETE BY ID
-
+def delete(id):
+    sql = "DELETE FROM sessions WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+    
 
 # UPDATE BY ID
 

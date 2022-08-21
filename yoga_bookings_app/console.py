@@ -16,5 +16,6 @@ session_repository.save(session2)
 session_repository.save(session3)
 session_repository.save(session4)
 
+session_repository.delete(17)
 
 
