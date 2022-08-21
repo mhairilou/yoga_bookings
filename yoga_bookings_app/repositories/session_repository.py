@@ -45,6 +45,12 @@ def delete(id):
 
 
 # UPDATE BY ID
+def update(session):
+    sql = "UPDATE sessions SET (yoga_type, duration) = (%s, %s) WHERE id = %s"
+    values = [session.yoga_type, session.duration, session.id]
+    run_sql(sql, values)
+
+    
 
 
 
