@@ -1,4 +1,3 @@
-import imp
 from models.session import Session
 
 import repositories.session_repository as session_repository
@@ -16,6 +15,9 @@ session_repository.save(session2)
 session_repository.save(session3)
 session_repository.save(session4)
 
-session_repository.delete(17)
+session_repository.delete(session3.id)
+
+session = session_repository.select(session1.id)
+print(session.yoga_type)
 
 

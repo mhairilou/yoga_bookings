@@ -10,6 +10,7 @@ def save(session):
     id = results[0]['id']
     session.id = id
 
+
 # SELECT ALL
 def select_all():
     sessions = []
@@ -21,19 +22,27 @@ def select_all():
     return sessions
 
 # SELECT BY ID
-
+def select(id):
+    sql = "SELECT * FROM sessions WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        session = Session(result["yoga_type"], result["duration"], result["id"])
+        return session
 
 # DELETE ALL
 def delete_all():
     sql = "DELETE FROM sessions"
     run_sql(sql)
 
+
 # DELETE BY ID
 def delete(id):
     sql = "DELETE FROM sessions WHERE id = %s"
     values = [id]
     run_sql(sql, values)
-    
+
 
 # UPDATE BY ID
 
