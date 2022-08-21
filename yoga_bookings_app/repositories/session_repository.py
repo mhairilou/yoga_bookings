@@ -11,13 +11,22 @@ def save(session):
     session.id = id
 
 # SELECT ALL
-
+def select_all():
+    sessions = []
+    sql = "SELECT * FROM sessions"
+    results = run_sql(sql)
+    for result in results:
+        session = Session(result["yoga_type"], result["duration"], result["id"])
+        sessions.append(session)
+    return sessions
 
 # SELECT BY ID
 
 
 # DELETE ALL
-
+def delete_all():
+    sql = "DELETE FROM sessions"
+    run_sql(sql)
 
 # DELETE BY ID
 
