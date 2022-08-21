@@ -15,4 +15,8 @@ class TestSession(unittest.TestCase):
         result = self.session1.yoga_type
         self.assertEqual("Hatha", result)
 
-    
+    def test_session_has_duration(self):
+        result = self.session2.duration
+        self.assertEqual(75, result)
+
+        
