@@ -33,3 +33,7 @@ student_repository.save(student1)
 booking1 = Booking(student1, session1)
 
 booking_repository.save(booking1)
+
+booking2 = Booking(student1, session2)
+
+booking_repository.save(booking2)

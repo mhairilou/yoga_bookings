@@ -29,6 +29,7 @@ def new_session():
 def create_session():
     yoga_type = request.form["yoga_type"]
     duration = request.form["duration"]
+    date = request.form["date"]
     new_session = Session(yoga_type, duration)
     session_repository.save(new_session)
     return redirect("/sessions")

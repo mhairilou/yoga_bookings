@@ -3,6 +3,14 @@
 
 <h2>theoretically all the bookings show here</h2>
 
+{% for booking in bookings %}
 
+<section>
+    <h3>{{ booking.student.first_name }} booked {{booking.session.yoga_type}} on </h3>
+    
+   
+</section>
+
+{% endfor %}
 
 {% endblock %}

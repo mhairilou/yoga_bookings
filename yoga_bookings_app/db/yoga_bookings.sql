@@ -5,7 +5,8 @@ DROP TABLE IF EXISTS students;
 CREATE TABLE sessions (
     id SERIAL PRIMARY KEY,
     yoga_type VARCHAR(255),
-    duration INT
+    duration INT,
+    date DATE NOT NULL
 );
 
 CREATE TABLE students (

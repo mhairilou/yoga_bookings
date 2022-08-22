@@ -21,6 +21,8 @@ def select_all():
     sql = "SELECT * FROM bookings"
     results = run_sql(sql)
     for result in results:
-        booking = Booking(result["student_id"], result["session_id"], result["id"])
+        student = student_repository.select(result["student_id"])
+        session = session_repository.select(result["session_id"])
+        booking = Booking(student, session, result["id"])
         bookings.append(booking)
     return bookings
