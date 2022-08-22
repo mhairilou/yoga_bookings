@@ -20,9 +20,10 @@ def new_student():
 #CREATE
 @student_blueprint.route("/students", methods = ["POST"])
 def create_student():
-    yoga_type = request.form["yoga_type"]
-    duration = request.form["duration"]
-    new_student = Student(yoga_type, duration)
+    first_name = request.form["first_name"]
+    last_name = request.form["last_name"]
+    credits = request.form["credits"]
+    new_student = Student(first_name, last_name, credits)
     student_repository.save(new_student)
     return redirect("/students")
 
