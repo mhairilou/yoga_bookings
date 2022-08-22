@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Edit a Student</h1>
+<h2>Edit Student Details</h2>
 
-<h2>Current details:</h2>
+<h3>Current details:</h3>
 
-<h3> First Name: {{student.first_name}} </h3>
-<h3> Last Name: {{student.last_name}}</h3>
-<h3> Credits: {{student.credits}}</h3>
+<p> First Name: {{student.first_name}} </p>
+<p> Last Name: {{student.last_name}}</p>
+<p> Credits: {{student.credits}}</p>
 
-<h2>New details</h2>
+<h3>New details</h3>
 <form action="/students/{{ student.id }}" method="POST">
     <div>
         <label for="first_name">First name</label>

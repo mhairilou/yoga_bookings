@@ -46,10 +46,10 @@ def update_student(id):
     first_name = request.form["first_name"]
     last_name = request.form["last_name"]
     credits = request.form["credits"]
-    student = Student(first_name, last_name, credits)
+    student = Student(first_name, last_name, credits, id)
     student_repository.update(student)
-    return redirect("/students/<id>")
-
+    return render_template("students/show.html", student = student)
+    
 #DELETE
 @student_blueprint.route("/students/<id>/delete", methods = ["POST"])
 def delete_student(id):

@@ -48,7 +48,7 @@ def update_session(id):
     duration = request.form["duration"]
     session = Session(yoga_type, duration, id)
     session_repository.update(session)
-    return redirect("/sessions")
+    return render_template("/sessions/show.html", session = session)
 
 #DELETE
 @session_blueprint.route("/sessions/<id>/delete", methods = ["POST"])
