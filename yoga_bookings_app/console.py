@@ -1,6 +1,8 @@
 from models.session import Session
+from models.student import Student
 
 import repositories.session_repository as session_repository
+import repositories.student_repository as student_repository
 
 session1 = Session("Yin Yang", 90)
 session2 = Session("Hatha", 60)
@@ -22,4 +24,6 @@ print(session.yoga_type)
 
 session1.duration= 100
 session_repository.update(session1)
+
+student1 = Student()
 

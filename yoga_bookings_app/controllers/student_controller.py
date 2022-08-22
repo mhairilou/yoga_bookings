@@ -1,5 +1,5 @@
 from flask import Blueprint, Flask, redirect, render_template, request
-from models.session import Student
+from models.student import Student
 import repositories.student_repository as student_repository
 
 student_blueprint = Blueprint("student", __name__)
