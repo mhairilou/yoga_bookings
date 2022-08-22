@@ -20,3 +20,6 @@ session_repository.delete(session3.id)
 session = session_repository.select(session1.id)
 print(session.yoga_type)
 
+session1.duration= 100
+session_repository.update(session1)
+

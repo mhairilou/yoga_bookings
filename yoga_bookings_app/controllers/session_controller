@@ -1,0 +1,27 @@
+from pickle import EMPTY_DICT
+from flask import Blueprint, Flask, redirect, render_template, request
+from models.session import Session
+
+session_blueprint = Blueprint("session", __name__)
+
+#INDEX
+
+
+
+#NEW
+
+
+
+#CREATE
+
+
+
+#EDIT
+
+
+
+#UPDATE
+
+
+
+#DELETE
