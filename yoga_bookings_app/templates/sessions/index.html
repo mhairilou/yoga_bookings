@@ -3,17 +3,23 @@
 
 <h2> Upcoming classes: </h2>
 
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Class</th>
+    <th>Length</th>
+  </tr>
+
 {% for session in sessions %}
 
-<section>
-    <h3>{{ session.yoga_type }} </h3>
-    <h3>
-        <a href="/sessions/{{ session.id }}">Details</a>
-        <a href="/sessions/{{ session.id }}/edit">Edit</a>
-    </h3>
-   
-</section>
-
+  <tr>
+    <td>{{ session.date.strftime("%A %d %B")}}</td>
+    <td>{{ session.yoga_type }}</td>
+    <td>{{ session.duration }} mins</td>
+  </tr>
+ 
 {% endfor %}
+
+</table>
 
 {% endblock %}

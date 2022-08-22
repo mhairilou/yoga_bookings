@@ -7,6 +7,14 @@
     background-image: url("https://m.media-amazon.com/images/I/913zwg7PzyL._AC_SL1500_.jpg");
   }*/
   
+
+  table, th, td {
+    border-collapse: collapse;
+    border: 1px solid;
+    width: auto;
+  }
+
+
   body {
     background-color: rgb(19, 41, 50);
     margin: 0px

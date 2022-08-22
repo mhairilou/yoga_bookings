@@ -4,8 +4,8 @@ from models.session import Session
 
 # SAVE
 def save(session):
-    sql = "INSERT INTO sessions (yoga_type, duration) VALUES (%s, %s) RETURNING id"
-    values = [session.yoga_type, session.duration]
+    sql = "INSERT INTO sessions (yoga_type, duration, date) VALUES (%s, %s, %s) RETURNING id"
+    values = [session.yoga_type, session.duration, session.date]
     results = run_sql(sql, values)
     id = results[0]['id']
     session.id = id
@@ -17,7 +17,7 @@ def select_all():
     sql = "SELECT * FROM sessions"
     results = run_sql(sql)
     for result in results:
-        session = Session(result["yoga_type"], result["duration"], result["id"])
+        session = Session(result["yoga_type"], result["duration"], result["date"], result["id"])
         sessions.append(session)
     return sessions
 
@@ -28,7 +28,7 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        session = Session(result["yoga_type"], result["duration"], result["id"])
+        session = Session(result["yoga_type"], result["duration"], result["date"], result["id"])
         return session
 
 # DELETE ALL
@@ -46,8 +46,8 @@ def delete(id):
 
 # UPDATE BY ID
 def update(session):
-    sql = "UPDATE sessions SET (yoga_type, duration) = (%s, %s) WHERE id = %s"
-    values = [session.yoga_type, session.duration, session.id]
+    sql = "UPDATE sessions SET (yoga_type, duration, date) = (%s, %s, %s) WHERE id = %s"
+    values = [session.yoga_type, session.duration, session.date, session.id]
     run_sql(sql, values)
 
     

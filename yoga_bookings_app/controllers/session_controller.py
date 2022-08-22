@@ -8,6 +8,7 @@ session_blueprint = Blueprint("session", __name__)
 @session_blueprint.route("/sessions")
 def sessions():
     sessions = session_repository.select_all()
+    sessions = sorted(sessions, key=lambda d: d.date)
     return render_template("sessions/index.html", sessions=sessions)
 
 
@@ -30,7 +31,7 @@ def create_session():
     yoga_type = request.form["yoga_type"]
     duration = request.form["duration"]
     date = request.form["date"]
-    new_session = Session(yoga_type, duration)
+    new_session = Session(yoga_type, duration, date)
     session_repository.save(new_session)
     return redirect("/sessions")
 
@@ -47,7 +48,8 @@ def edit_session(id):
 def update_session(id):
     yoga_type = request.form["yoga_type"]
     duration = request.form["duration"]
-    session = Session(yoga_type, duration, id)
+    date = request.form["date"]
+    session = Session(yoga_type, duration, date, id)
     session_repository.update(session)
     return render_template("/sessions/show.html", session = session)
 

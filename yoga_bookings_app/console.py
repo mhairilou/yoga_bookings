@@ -6,20 +6,25 @@ import repositories.session_repository as session_repository
 import repositories.student_repository as student_repository
 import repositories.booking_repository as booking_repository
 
-session1 = Session("Yin Yang", 90)
-session2 = Session("Hatha", 60)
-session3 = Session("Vinyasa", 60)
-session4 = Session("Restorative", 75)
+import datetime
 
 
 session_repository.delete_all()
 
-session_repository.save(session1)
-session_repository.save(session2)
-session_repository.save(session3)
-session_repository.save(session4)
+session1 = Session("Yin Yang", 90, datetime.datetime(2022, 12, 12))
 
-session_repository.delete(session3.id)
+# session2 = Session("Hatha", 60)
+# session3 = Session("Vinyasa", 60)
+# session4 = Session("Restorative", 75)
+
+
+session_repository.save(session1)
+
+# session_repository.save(session2)
+# session_repository.save(session3)
+# session_repository.save(session4)
+
+# session_repository.delete(session3.id)
 
 session = session_repository.select(session1.id)
 
@@ -34,6 +39,3 @@ booking1 = Booking(student1, session1)
 
 booking_repository.save(booking1)
 
-booking2 = Booking(student1, session2)
-
-booking_repository.save(booking2)
