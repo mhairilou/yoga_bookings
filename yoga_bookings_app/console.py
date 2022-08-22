@@ -30,4 +30,6 @@ student1 = Student("Peppa", "Pig", 5)
 
 student_repository.save(student1)
 
+booking1 = Booking(student1, session1)
 
+booking_repository.save(booking1)
