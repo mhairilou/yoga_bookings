@@ -5,3 +5,4 @@ class Session:
         self.duration = duration
         self.id = id
 
+sessions = []

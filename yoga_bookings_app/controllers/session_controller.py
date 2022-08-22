@@ -7,8 +7,8 @@ session_blueprint = Blueprint("session", __name__)
 #INDEX
 @session_blueprint.route("/sessions")
 def sessions():
-    sessions = session_repository.select_all
-    return render_template("sessions.index.html", sessions = sessions)
+    sessions = session_repository.select_all()
+    return render_template("sessions/index.html", sessions=sessions)
 
 
 #NEW

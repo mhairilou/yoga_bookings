@@ -3,5 +3,14 @@
 
 <h1> Sessions/index </h1>
 
+{% for session in sessions %}
+
+<section>
+    <h3>{{ session.yoga_type }}</h3>
+    <p>{{ session.duration }}</p>
+
+</section>
+
+{% endfor %}
 
 {% endblock %}
