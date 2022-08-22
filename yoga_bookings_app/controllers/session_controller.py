@@ -1,4 +1,3 @@
-from pickle import EMPTY_DICT
 from flask import Blueprint, Flask, redirect, render_template, request
 from models.session import Session
 import repositories.session_repository as session_repository
@@ -19,7 +18,7 @@ def new_session():
 
 
 #CREATE
-@session_blueprint.route("sessions", methods = ["POST"])
+@session_blueprint.route("/sessions", methods = ["POST"])
 def create_session():
     yoga_type = request.form["yoga_type"]
     duration = request.form["duration"]

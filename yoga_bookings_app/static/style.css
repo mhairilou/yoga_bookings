@@ -1,0 +1,105 @@
+* { 
+    color: azure;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  }
+  
+  /*body {
+    background-image: url("https://m.media-amazon.com/images/I/913zwg7PzyL._AC_SL1500_.jpg");
+  }*/
+  
+  body {
+    background-color: rgb(19, 41, 50);
+    margin: 0px
+  }
+  
+  .book-container {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .submit-button {
+    background-color: #cd8e37;
+    border-radius: 5px;
+    font-size: medium
+  }
+  
+  header {
+    background-color: #cd8e37;
+    margin: 0px;
+    padding: 2px;
+    width: 100%;
+    
+  }
+  
+  input[type=submit] {
+    color: white;
+    background-color: #cd8e37;
+    justify-content: center;
+    
+  }
+  
+  input {
+    color: black
+  }
+  
+  .form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: black;
+    min-width: 800px;
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: large;
+  
+  
+  }
+  
+  .form-inline {
+    justify-content: center;
+  }
+  
+  #single-book {
+  
+    justify-content: center;
+    text-align: center;
+    margin: 100px;
+    
+  
+  
+  }
+  
+  .book {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 260;
+    height: 260px;
+    background-color: #579089;
+    padding: 40px;
+    border: 40px;
+    margin: 40px;
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 29px 0px;
+    word-wrap: break-word;
+   
+  }
+  
+  .book:hover {
+    background-color: #cd8e37;
+  }
+  
+  h1, h2, h3 {
+    text-align: center;
+    color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif
+    
+  }
+  
+  h3 {
+    font-size: x-large;
+  }
