@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>THIS HAS BEEN COPIED, CHANGE DETAILS</h2>
+
+<h3>Current details:</h3>
+
+<h3> Type: {{session.yoga_type}} </h3>
+<h3> Duration: {{session.duration}} minutes</h3>
+
+<h2>New details</h2>
+<form action="/sessions/{{ session.id }}" method="POST">
+    <div>
+        <label for="yoga_type">Type</label>
+        <input type="text" id="yoga_type" name="yoga_type" value="{{ yoga_type }}">
+    </div>
+    <div>
+        <label for="duration">Duration</label>
+        <input type="number" id="duration" name="duration" value="{{ duration }}">
+    </div>
+    <div>
+        
+        <input type="submit" value="Update">
+    </div>
+</form>
+{% endblock %}

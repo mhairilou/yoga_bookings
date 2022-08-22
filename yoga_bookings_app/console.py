@@ -1,8 +1,10 @@
 from models.session import Session
 from models.student import Student
+from models.booking import Booking
 
 import repositories.session_repository as session_repository
 import repositories.student_repository as student_repository
+import repositories.booking_repository as booking_repository
 
 session1 = Session("Yin Yang", 90)
 session2 = Session("Hatha", 60)
