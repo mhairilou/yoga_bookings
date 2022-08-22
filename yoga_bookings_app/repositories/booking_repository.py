@@ -14,3 +14,13 @@ def save(booking):
     results = run_sql(sql, values)
     id = results[0]['id']
     booking.id = id
+
+# SELECT ALL
+def select_all():
+    bookings = []
+    sql = "SELECT * FROM bookings"
+    results = run_sql(sql)
+    for result in results:
+        booking = Booking(result["student_id"], result["session_id"], result["id"])
+        bookings.append(booking)
+    return bookings
