@@ -25,5 +25,8 @@ print(session.yoga_type)
 session1.duration= 100
 session_repository.update(session1)
 
-student1 = Student()
+student1 = Student("Peppa", "Pig", 5)
+
+student_repository.save(student1)
+
 

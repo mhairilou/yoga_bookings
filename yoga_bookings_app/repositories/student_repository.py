@@ -4,8 +4,8 @@ from models.student import Student
 
 # SAVE
 def save(student):
-    sql = "INSERT INTO students (yoga_type, duration) VALUES (%s, %s) RETURNING id"
-    values = [student.yoga_type, student.duration]
+    sql = "INSERT INTO students (first_name, last_name, credits) VALUES (%s, %s, %s) RETURNING id"
+    values = [student.first_name, student.last_name, student.credits]
     results = run_sql(sql, values)
     id = results[0]['id']
     student.id = id
@@ -17,7 +17,7 @@ def select_all():
     sql = "SELECT * FROM students"
     results = run_sql(sql)
     for result in results:
-        student = Student(result["yoga_type"], result["duration"], result["id"])
+        student = Student(result["first_name"], result["last_name"], result["credits"], result["id"])
         students.append(student)
     return students
 
@@ -28,7 +28,7 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        student = Student(result["yoga_type"], result["duration"], result["id"])
+        student = Student(result["first_name"], result["last_name"], result["credits"], result["id"])
         return student
 
 # DELETE ALL
@@ -46,8 +46,8 @@ def delete(id):
 
 # UPDATE BY ID
 def update(student):
-    sql = "UPDATE students SET (yoga_type, duration) = (%s, %s) WHERE id = %s"
-    values = [student.yoga_type, student.duration, student.id]
+    sql = "UPDATE students SET (first_name, last_name, credits) = (%s, %s, %s) WHERE id = %s"
+    values = [student.first_name, student.last_name, student.credits, student.id]
     run_sql(sql, values)
 
     
