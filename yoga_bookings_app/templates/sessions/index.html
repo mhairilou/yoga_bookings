@@ -6,7 +6,11 @@
 {% for session in sessions %}
 
 <section>
-    <h3>{{ session.yoga_type }} - {{ session.duration }} min</h3>
+    <h3>{{ session.yoga_type }} </h3>
+    <h2>
+        <a href="/sessions/{{ session.id }}">View Details</a>
+        <a href="/sessions/{{ session.id }}/edit">Edit</a>
+    </h2>
    
 </section>
 

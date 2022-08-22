@@ -10,6 +10,11 @@ def students():
     students = student_repository.select_all()
     return render_template("students/index.html", students=students)
 
+# SHOW
+@student_blueprint.route("/students/<id>")
+def show_student(id):
+    student = student_repository.select(id)
+    return render_template("students/show.html", student = student)
 
 #NEW
 @student_blueprint.route("/students/new")
@@ -38,11 +43,12 @@ def edit_student(id):
 #UPDATE
 @student_blueprint.route("/students/<id>", methods = ["POST"])
 def update_student(id):
-    yoga_type = request.form["yoga_type"]
-    duration = request.form["duration"]
-    student = Student(yoga_type, duration, id)
+    first_name = request.form["first_name"]
+    last_name = request.form["last_name"]
+    credits = request.form["credits"]
+    student = Student(first_name, last_name, credits)
     student_repository.update(student)
-
+    return redirect("/students/<id>")
 
 #DELETE
 @student_blueprint.route("/students/<id>/delete", methods = ["POST"])

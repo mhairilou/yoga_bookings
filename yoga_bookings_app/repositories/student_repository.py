@@ -49,7 +49,6 @@ def update(student):
     sql = "UPDATE students SET (first_name, last_name, credits) = (%s, %s, %s) WHERE id = %s"
     values = [student.first_name, student.last_name, student.credits, student.id]
     run_sql(sql, values)
-
     
 
 

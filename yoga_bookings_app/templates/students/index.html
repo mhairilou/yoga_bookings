@@ -6,8 +6,14 @@
 {% for student in students %}
 
 <section>
-    
-    <h3>{{ student.first_name }} {{ student.last_name }} - {{student.credits}} credits</h3>
+
+    <h3>{{ student.first_name }} {{ student.last_name }}</h3>
+    <h2>{{student.credits}} credits </h2>
+    <h2>
+        <a href="/students/{{ student.id }}">View Details</a>    
+        <a href="/students/{{ student.id }}/edit">Edit</a>
+    </h2>     
+        
    
 </section>
 
