@@ -26,3 +26,5 @@ def select_all():
         booking = Booking(student, session, result["id"])
         bookings.append(booking)
     return bookings
+
+

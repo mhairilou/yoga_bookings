@@ -26,8 +26,8 @@
     <td><form action="/sessions/{{ session.id }}/delete" method="POST">
             <input type="submit" value="Delete"></form></td>
 
-    # <td><form action="/bookings/{{ session.id }}/new" method="GET">
-    #         <input type="submit" value="Book"></form></td>
+    <td><form action="/bookings/{{ session.id }}/new" method="GET">
+             <input type="submit" value="Book"></form></td>
   </tr>
  
 {% endfor %}

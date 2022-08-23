@@ -4,7 +4,7 @@
 <h2> THIS HAS BEEN COPIED, CHANGE DETAILS</h2>
 <h2>Add a New Booking</h2>
 
-<form action="/bookings" method="POST">
+<form action="/bookings/<id>/new" method="POST">
   <div>
       <label for="student">Student:</label>
       <select name="student_id" id="student">
@@ -18,13 +18,11 @@
   </div>
   <div>
       <label for="session">Session:</label>
-      <select name="session_id" id="session">
-          {% for session in sessions%}
-          <option value="{{ session.id }}">
-              {{ session.yoga_type }} {{session.date.strftime("%A %d %B")}}
-          </option>
-          {% endfor %}
-      </select>
+      
+       
+              {{ selected_session.yoga_type }} {{selected_session.date.strftime("%A %d %B")}}
+       
+    
   </div>
 
       <input type="submit">

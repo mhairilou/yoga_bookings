@@ -18,5 +18,9 @@ class TestStudent(unittest.TestCase):
     
     def test_student_has_credits(self):
         result = self.student1.credits
-        self.assertEqual(2, result)    
+        self.assertEqual(2, result)   
+
+    def test_student_full_name(self):
+        result = self.student1.full_name()
+        self.assertEqual("Woody The Dog", result) 
         
