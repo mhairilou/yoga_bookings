@@ -10,6 +10,8 @@ import datetime
 
 
 session_repository.delete_all()
+student_repository.delete_all()
+booking_repository.delete_all()
 
 session1 = Session("Yin Yang", 90, datetime.datetime(2022, 12, 12))
 

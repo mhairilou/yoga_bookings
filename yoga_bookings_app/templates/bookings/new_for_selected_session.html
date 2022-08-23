@@ -1,29 +1,29 @@
 
 {% extends "base.html" %}
 {% block content %}
-<h2> THIS HAS BEEN COPIED, CHANGE DETAILS</h2>
-<h2>Add a New Booking</h2>
 
-<form action="/bookings/<id>/new" method="POST">
+<h2>{{ selected_session.yoga_type }} {{selected_session.date.strftime("%A %d %B")}}</h2>
+
+<h3> Who would you like to book in? </h3>
+
+<form action="/bookings/<id>" method="POST">
   <div>
+
       <label for="student">Student:</label>
       <select name="student_id" id="student">
           {% for student in students%}
           <option value="{{ student.id }}">
               {{ student.full_name() }}
           </option>
-    
           {% endfor %}
       </select>
-  </div>
+
   <div>
-      <label for="session">Session:</label>
-      
-       
-              {{ selected_session.yoga_type }} {{selected_session.date.strftime("%A %d %B")}}
-       
-    
+    <input type="hidden" id="session_id" name="session_id" value="{{ selected_session.id }}">
   </div>
+
+  </div>
+
 
       <input type="submit">
   </div>

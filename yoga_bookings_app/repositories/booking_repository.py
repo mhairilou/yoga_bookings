@@ -27,4 +27,13 @@ def select_all():
         bookings.append(booking)
     return bookings
 
-
+# SELECT ALL BOOKINGS BY SESSION ID
+def select_all_bookings_by_session_id(session):
+    bookings = []
+    sql = "SELECT * FROM bookings WHERE session_id = %s"
+    values = [session.id]
+    results = run_sql(sql, values)
+    for result in results:
+        booking = Booking(result["student_id"], result["session_id"])
+        bookings.append(booking)
+    return bookings

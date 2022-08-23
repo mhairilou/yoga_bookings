@@ -1,6 +1,10 @@
+import imp
 from flask import Blueprint, Flask, redirect, render_template, request
 from models.session import Session
+from models.booking import Booking
+import repositories.booking_repository as booking_repository
 import repositories.session_repository as session_repository
+
 
 session_blueprint = Blueprint("session", __name__)
 
@@ -16,7 +20,8 @@ def sessions():
 @session_blueprint.route("/sessions/<id>")
 def show_session(id):
     session = session_repository.select(id)
-    return render_template("sessions/show.html", session = session)
+    bookings = booking_repository.select_all_bookings_by_session_id(id)
+    return render_template("sessions/show.html", session = session, bookings = bookings)
 
 
 #NEW

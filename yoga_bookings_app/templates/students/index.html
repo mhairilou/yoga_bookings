@@ -2,6 +2,7 @@
 {% block content %}
 
 <h1> All Students </h1>
+
 <table>
     <tr>
       <th>Name</th>
@@ -11,19 +12,15 @@
       
     </tr>
 {% for student in students %}
-
-
     <tr>
         <td>{{ student.first_name}} {{ student.last_name }}</td>
         <td>{{ student.credits}} </td>
         <td><a href="/students/{{ student.id }}">View</a> </td>  
         <td><a href="/students/{{ student.id }}/edit">Edit</a></td>
-   
-        
-        
-   
+   </tr>
+   {% endfor %}       
 </table>
 
-{% endfor %}
+
 
 {% endblock %}

@@ -21,13 +21,6 @@ def new_booking():
     students = student_repository.select_all()
     return render_template("bookings/new.html", sessions = sessions, students = students)
 
-#NEW BOOKING FOR SELECTED SESSION
-@booking_blueprint.route("/bookings/<id>/new")
-def new_booking_for_selected_session(id):
-    selected_session = session_repository.select(id)
-    students = student_repository.select_all()
-    return render_template("bookings/new_for_selected_session.html", selected_session = selected_session, students = students)
-
 #CREATE
 @booking_blueprint.route("/bookings", methods = ["POST"])
 def create_booking():
@@ -38,3 +31,23 @@ def create_booking():
     new_booking = Booking(student, session)
     booking_repository.save(new_booking)
     return redirect("/bookings")
+
+
+#NEW BOOKING FOR SELECTED SESSION
+@booking_blueprint.route("/bookings/<id>/new")
+def new_booking_for_selected_session(id):
+    selected_session = session_repository.select(id)
+    students = student_repository.select_all()
+    return render_template("bookings/new_for_selected_session.html", selected_session = selected_session, students = students)
+
+
+#CREATE FOR SELECTED SESSION
+@booking_blueprint.route("/bookings/<id>", methods = ["POST"])
+def create_booking_for_selected_session(id):
+    student_id = request.form["student_id"]
+    session_id = request.form["session_id"]
+    session = session_repository.select(session_id)
+    student = student_repository.select(student_id)
+    new_booking = Booking(student, session)
+    booking_repository.save(new_booking)
+    return redirect("/sessions")

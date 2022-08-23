@@ -3,6 +3,11 @@
 
 <h1> {{session.yoga_type}} </h1>
 <h2> {{session.duration}} minutes</h2>
+<h3> Booked into this class: </h3>
+<ul>
+    {%for booking in bookings%}
+    {{booking}}
+</ul>
 <a href="/sessions/{{ session.id }}/edit">Edit</a>
 
 
