@@ -36,7 +36,8 @@ def create_session():
     yoga_type = request.form["yoga_type"]
     duration = request.form["duration"]
     date = request.form["date"]
-    new_session = Session(yoga_type, duration, date)
+    time = request.form["time"]
+    new_session = Session(yoga_type, duration, date, time)
     session_repository.save(new_session)
     return redirect("/sessions")
 
@@ -54,7 +55,8 @@ def update_session(id):
     yoga_type = request.form["yoga_type"]
     duration = request.form["duration"]
     date = request.form["date"]
-    session = Session(yoga_type, duration, date, id)
+    time = request.form["time"]
+    session = Session(yoga_type, duration, date, time, id)
     session_repository.update(session)
     return render_template("/sessions/show.html", session = session)
 

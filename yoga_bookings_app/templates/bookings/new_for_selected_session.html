@@ -2,7 +2,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>{{ selected_session.yoga_type }} {{selected_session.date.strftime("%A %d %B")}}</h2>
+<h2>{{ selected_session.yoga_type }} </h2>
+<h4> {{selected_session.date.strftime("%A %d %B")}} at {{ selected_session.time.strftime("%H:%M") }} </h4>
 
 <h3> Who would you like to book in? </h3>
 
