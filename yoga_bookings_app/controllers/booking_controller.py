@@ -30,7 +30,7 @@ def create_booking():
     student = student_repository.select(student_id)
     new_booking = Booking(student, session)
     booking_repository.save(new_booking)
-    return redirect("/bookings")
+    return redirect("/bookings/new")
 
 
 #NEW BOOKING FOR SELECTED SESSION

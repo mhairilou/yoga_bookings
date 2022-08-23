@@ -1,17 +1,14 @@
 * { 
     color: azure;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-  }
-  
-  /*body {
-    background-image: url("https://m.media-amazon.com/images/I/913zwg7PzyL._AC_SL1500_.jpg");
-  }*/
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
   
 /* Dropdown Button */
 .dropbtn {
-  background-color: #04AA6D;
+  background: none;
   color: white;
   padding: 16px;
+  margin: 10px;
   font-size: 16px;
   border: none;
 }
@@ -20,6 +17,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
+
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -47,11 +45,19 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: #da8a28;}
+
+
   table, th, td {
     border-collapse: collapse;
     border: 1px solid;
     width: auto;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 
@@ -82,7 +88,7 @@
   }
   
   input[type=submit] {
-    color: white;
+    color: black;
     background-color: #cd8e37;
     justify-content: center;
     
@@ -144,8 +150,13 @@
   h1, h2, h3 {
     text-align: center;
     color: white;
-    font-family:Georgia, 'Times New Roman', Times, serif
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding: 10px
     
+  }
+
+  h2 {
+    padding: 30px;
   }
   
   h3 {
@@ -160,10 +171,17 @@
     width: 100%;
     margin: 0 auto;
     text-align: center;
+   
   }
 
+ 
+  .dropdown-content {
+    text-align: left;
+  }
   *{
     margin: 0;
     padding: 0;
 }
+
+
 
