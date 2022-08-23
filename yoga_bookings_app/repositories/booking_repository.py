@@ -28,12 +28,33 @@ def select_all():
     return bookings
 
 # SELECT ALL BOOKINGS BY SESSION ID
-def select_all_bookings_by_session_id(session):
+def select_all_bookings_by_session_id(session_id):
     bookings = []
     sql = "SELECT * FROM bookings WHERE session_id = %s"
-    values = [session.id]
+    values = [session_id]
     results = run_sql(sql, values)
     for result in results:
-        booking = Booking(result["student_id"], result["session_id"])
+        session = session_repository.select(result["session_id"])  
+        student = student_repository.select(result["student_id"])      
+        booking = Booking(student, session, result["id"])
         bookings.append(booking)
     return bookings
+
+# SELECT ALL BOOKINGS BY STUDENT ID
+def select_all_bookings_by_student_id(student_id):
+    bookings = []
+    sql = "SELECT * FROM bookings WHERE student_id = %s"
+    values = [student_id]
+    results = run_sql(sql, values)
+    for result in results:
+        session = session_repository.select(result["session_id"])  
+        student = student_repository.select(result["student_id"])      
+        booking = Booking(student, session, result["id"])
+        bookings.append(booking)
+    return bookings
+
+
+# DELETE ALL
+def delete_all():
+    sql = "DELETE FROM bookings"
+    run_sql(sql)

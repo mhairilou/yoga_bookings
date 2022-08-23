@@ -4,6 +4,16 @@
 <h1> {{student.first_name}} {{student.last_name}}  </h1>
 <h2> Credits: {{student.credits}} </h2>
 
-<a href="/students/{{ student.id }}/edit">Edit</a>
+<a href="/students/{{ student.id }}/edit">Edit details</a>
+
+
+<h2>Bookings:</h2>
+<ul>
+    {%for booking in bookings%}
+    <li>{{booking.session.date.strftime("%A %d %B")}} - {{ booking.session.yoga_type }}</li>
+    {%endfor%}
+</ul>
+
+
 
 {% endblock %}

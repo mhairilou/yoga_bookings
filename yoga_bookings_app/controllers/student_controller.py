@@ -1,6 +1,8 @@
 from flask import Blueprint, Flask, redirect, render_template, request
 from models.student import Student
+from models.booking import Booking
 import repositories.student_repository as student_repository
+import repositories.booking_repository as booking_repository
 
 student_blueprint = Blueprint("student", __name__)
 
@@ -14,7 +16,8 @@ def students():
 @student_blueprint.route("/students/<id>")
 def show_student(id):
     student = student_repository.select(id)
-    return render_template("students/show.html", student = student)
+    bookings = booking_repository.select_all_bookings_by_student_id(id)
+    return render_template("students/show.html", student = student, bookings = bookings)
 
 #NEW
 @student_blueprint.route("/students/new")

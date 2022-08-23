@@ -6,7 +6,8 @@
 <h3> Booked into this class: </h3>
 <ul>
     {%for booking in bookings%}
-    {{booking}}
+    {{ booking.student.full_name() }}
+    {%endfor%}
 </ul>
 <a href="/sessions/{{ session.id }}/edit">Edit</a>
 

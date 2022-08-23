@@ -9,7 +9,4 @@ class Student:
     def full_name(self):
         return f"{self.first_name} {self.last_name}"
 
-    # def get_student_by_name(self, name):
-    #    result =  self.full_name()
-    #    if name == result:
-    #     return s
+   
