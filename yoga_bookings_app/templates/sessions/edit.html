@@ -11,10 +11,13 @@
 <h2>New details</h2>
 <form action="/sessions/{{ session.id }}" method="POST">
     <div>
-        <label for="yoga_type">Type</label>
+        <h4>Type</h4>
+        Current: {{session.yoga_type}}
+        <label for="yoga_type">New:</label>
         <input type="text" id="yoga_type" name="yoga_type" value="{{ yoga_type }}">
     </div>
     <div>
+
         <label for="date">Date</label>
         <input type="date" id="date" name="date" value="{{ date }}">
     </div>
@@ -27,4 +30,10 @@
         <input type="submit" value="Update">
     </div>
 </form>
+
+
+
+
+
+
 {% endblock %}

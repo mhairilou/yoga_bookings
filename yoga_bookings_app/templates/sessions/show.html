@@ -1,15 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1> {{session.yoga_type}} </h1>
-<h2> {{session.duration}} minutes</h2>
-<h3> Booked into this class: </h3>
+
+<h1> Class Details </h1>
+<table>
+<tr>
+   
+    <th>Date</th>
+    <th>Time</th>
+    <th>Type</th>
+    <th>Length</th>
+</tr>
+<tr>
+    <td>{{session.date.strftime("%A %d %B")}}</td>
+    <td>{{session.time.strftime("%H:%M")}}</td>
+    <td>{{session.yoga_type}}</td>
+    <td>{{session.duration}} minutes</td>
+    <td><a href="/sessions/{{ session.id }}/edit">Edit</a></td> 
+</tr>
+</table>
+
+
+<h4>Students booked into this class:</h4>
 <ul>
     {%for booking in bookings%}
     {{ booking.student.full_name() }}
     {%endfor%}
 </ul>
-<a href="/sessions/{{ session.id }}/edit">Edit</a>
 
 
 {% endblock %}

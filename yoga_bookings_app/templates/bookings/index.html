@@ -5,9 +5,8 @@
 
 {% for booking in bookings %}
 
-    <p>{{ booking.student.first_name }} booked {{booking.session.yoga_type}} on {{booking.session.date.strftime("%A %d %B")}}</p>
+    <p>{{ booking.student.full_name() }} booked {{booking.session.yoga_type}} on {{booking.session.date.strftime("%A %d %B")}}</p>
     
-   
 
 {% endfor %}
 

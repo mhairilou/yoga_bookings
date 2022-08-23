@@ -6,7 +6,8 @@ CREATE TABLE sessions (
     id SERIAL PRIMARY KEY,
     yoga_type VARCHAR(255),
     duration INT,
-    date DATE NOT NULL
+    date DATE NOT NULL,
+    time TIME NOT NULL
 );
 
 CREATE TABLE students (

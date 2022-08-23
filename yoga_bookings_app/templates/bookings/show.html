@@ -3,7 +3,26 @@
 <h1>THIS HAS BEEN COPIED, CHANGE DETAILS</h1>
 <h1> {{session.yoga_type}} </h1>
 <h2> {{session.duration}} minutes</h2>
-<a href="/sessions/{{ session.id }}/edit">Edit</a>
 
+<!-- ADD A LINE FOR CANCEL BOOKING -->
+
+<table>
+    <tr>
+        <th>Student</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Class</th>
+        <th>Length</th>
+    </tr>
+    <tr>
+        <td>{{student.full_name()}}</td>
+        <td>{{booking.session.date.strftime("%A %d %B")}}</td>
+        <td>{{booking.session.time.strftime("%H:%M")}}</td>
+        <td>{{booking.session.yoga_type}}</td>
+        <td>{{booking.session.duartion}}</td>
+        
+    </tr>
+
+</table>
 
 {% endblock %}
