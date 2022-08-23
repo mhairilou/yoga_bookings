@@ -2,20 +2,27 @@
 {% block content %}
 
 <h1> All Students </h1>
-
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Credits</th>
+      <th> </th>
+      <th> </th>
+      
+    </tr>
 {% for student in students %}
 
-<section>
 
-    <h3>{{ student.first_name }} {{ student.last_name }}</h3>
-    <h2>{{student.credits}} credits </h2>
-    <h2>
-        <a href="/students/{{ student.id }}">View Details</a>    
-        <a href="/students/{{ student.id }}/edit">Edit</a>
-    </h2>     
+    <tr>
+        <td>{{ student.first_name}} {{ student.last_name }}</td>
+        <td>{{ student.credits}} </td>
+        <td><a href="/students/{{ student.id }}">View</a> </td>  
+        <td><a href="/students/{{ student.id }}/edit">Edit</a></td>
+   
+        
         
    
-</section>
+</table>
 
 {% endfor %}
 

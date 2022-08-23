@@ -13,12 +13,15 @@ session_repository.delete_all()
 
 session1 = Session("Yin Yang", 90, datetime.datetime(2022, 12, 12))
 
-# session2 = Session("Hatha", 60)
-# session3 = Session("Vinyasa", 60)
-# session4 = Session("Restorative", 75)
+session2 = Session("Hatha", 60, datetime.datetime(2022, 12, 12))
+session3 = Session("Vinyasa", 60, datetime.datetime(2022, 12, 12))
+session4 = Session("Restorative", 75, datetime.datetime(2022, 12, 12))
 
 
 session_repository.save(session1)
+session_repository.save(session2)
+session_repository.save(session3)
+session_repository.save(session4)
 
 # session_repository.save(session2)
 # session_repository.save(session3)

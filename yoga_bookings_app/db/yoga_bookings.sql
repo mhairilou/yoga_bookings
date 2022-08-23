@@ -19,5 +19,6 @@ CREATE TABLE students (
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
     student_id SERIAL NOT NULL REFERENCES students(id),
-    session_id SERIAL NOT NULL REFERENCES sessions(id)
+    session_id SERIAL NOT NULL REFERENCES sessions(id) ON delete cascade
+
 );

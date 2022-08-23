@@ -16,6 +16,8 @@
     <td>{{ session.date.strftime("%A %d %B")}}</td>
     <td>{{ session.yoga_type }}</td>
     <td>{{ session.duration }} mins</td>
+    <td></a><form action="/sessions/{{ session.id }}/delete" method="POST">
+            <input type="submit" value="Delete"></form></td>
   </tr>
  
 {% endfor %}
