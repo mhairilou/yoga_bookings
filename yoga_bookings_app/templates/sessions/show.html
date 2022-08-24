@@ -16,7 +16,8 @@
     <td>{{session.time.strftime("%H:%M")}}</td>
     <td>{{session.yoga_type}}</td>
     <td>{{session.duration}} minutes</td>
-    <td><a href="/sessions/{{ session.id }}/edit">Edit</a></td> 
+    <td><form action="/sessions/{{ session.id }}/edit" method="GET">
+        <input type="submit" value="Edit"></form></td>
 </tr>
 </table>
 
@@ -26,11 +27,12 @@
 <div>
     <ul>
         <li>
+    <table>
     {%for booking in bookings%}
-    <a href="/students/{{booking.student.id}}">{{ booking.student.full_name() }}</a>
+    <tr><a href="/students/{{booking.student.id}}">{{ booking.student.full_name() }}   </a>
 
     <form action="/bookings/{{ booking.id }}/delete" method="POST">
-        <input type="submit" value="Cancel"></form>
+        <input type="submit" value="Cancel"></form></tr>
 
     {%endfor%}
         </li>

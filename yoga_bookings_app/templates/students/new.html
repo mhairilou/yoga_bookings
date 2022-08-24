@@ -3,18 +3,22 @@
 {% block content %}
 
 <h2>Add a New Student</h2>
-
+<br>
 <div class="form-container">
-
+<ul>
     <form action="/students" method="post">
-        <label for="first_name">First name</label>
-        <input type="text" name="first_name" id="first_name">
-        <label for="last_name">Last name</label>
-        <input type="text" name="last_name" id="last_name">
-        <label for="Credits">Credits</label>
-        <input type="number" name="credits" id="credits">
+        <li><label for="first_name">First name</label>
+        <input type="text" name="first_name" id="first_name"></li>
+        <br>
+        <li><label for="last_name">Last name</label>
+        <input type="text" name="last_name" id="last_name"></li>
+        <br>
+        <li><label for="Credits">Credits</label>
+        <input type="number" name="credits" id="credits"></li>
+        <br>
         <input type="submit" class="submit-button" value="Add Student">
       </form>
     </div>
-
+    <br>
+</ul>
 {% endblock %}

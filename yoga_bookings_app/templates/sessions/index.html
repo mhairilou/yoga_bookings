@@ -16,9 +16,10 @@
     <td>{{ session.time.strftime("%H:%M")}}</td>
     <td>{{ session.yoga_type }}</td>
 
+            
     <td><form action="/sessions/{{ session.id }}" method="GET">
             <input type="submit" value="View"></form></td>
-            
+
     <td><form action="/sessions/{{ session.id }}/edit" method="GET">
             <input type="submit" value="Edit"></form></td>
 

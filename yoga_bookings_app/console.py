@@ -15,16 +15,16 @@ booking_repository.delete_all()
 
 session1 = Session("Yin Yang", 90, datetime.datetime(2022, 12, 12), datetime.time(10, 30))
 
-# session2 = Session("Hatha", 60, datetime.datetime(2022, 12, 12))
-# session3 = Session("Vinyasa", 60, datetime.datetime(2022, 12, 12))
-# session4 = Session("Restorative", 75, datetime.datetime(2022, 12, 12))
+session2 = Session("Hatha", 60, datetime.datetime(2022, 10, 12), datetime.time(10, 30))
+session3 = Session("Vinyasa", 60, datetime.datetime(2022, 10, 13), datetime.time(10, 30))
+session4 = Session("Restorative", 75, datetime.datetime(2022, 12, 14), datetime.time(10, 30))
 
 
 session_repository.save(session1)
 
-# session_repository.save(session2)
-# session_repository.save(session3)
-# session_repository.save(session4)
+session_repository.save(session2)
+session_repository.save(session3)
+session_repository.save(session4)
 
 
 # session_repository.delete(session3.id)
@@ -34,9 +34,9 @@ session_repository.save(session1)
 # session1.duration= 100
 # session_repository.update(session1)
 
-# student1 = Student("Peppa", "Pig", 5)
+student1 = Student("Peppa", "Pig", 5)
 
-# student_repository.save(student1)
+student_repository.save(student1)
 
 # booking1 = Booking(student1, session1)
 

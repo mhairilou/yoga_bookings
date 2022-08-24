@@ -62,9 +62,10 @@ def update_session(id):
 
     session_repository.update(session)
     session = session_repository.select(id)
+    bookings = booking_repository.select_all_bookings_by_session_id(id)
     # print(type(updated_session.date))
     # print("what3 " + session2.date + " time " +session2.time+ ": "+session2.duration + ":" + session2.yoga_type)
-    return render_template("/sessions/show.html", session = session)
+    return render_template("/sessions/show.html", session = session, bookings = bookings)
 
     
 

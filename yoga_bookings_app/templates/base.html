@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Yoga Fairy Bookings</title>
+    <title>BB Bookings</title>
 </head>
 <body>
     <header>
@@ -18,24 +18,21 @@
                 <div class="dropdown-content">
                   <a href="/sessions">All classes</a>
                   <a href="/sessions/new">Add a class</a>
-                  <a href="/bookings/new">Make a booking</a>
                 </div>
-              </div>
+            </div>
             <div class="dropdown">
                 <button class="dropbtn">Students</button>
                 <div class="dropdown-content">
                   <a href="/students">All students</a>
                   <a href="/students/new">Add new student</a>
-                  <a href="/bookings/new">Make a booking</a>
                 </div>
-              </div>
+            </div>
             <div class="dropdown">
-                <button class="dropbtn">Activity Log</button>
-                <div class="dropdown-content">
-                  <a href="/bookings">All bookings</a>
-
-                </div>
-              </div>
+            <a href="/bookings"><button class="dropbtn">Activity Log</button></a>
+            </div>
+            <div class="dropdown">
+            <a href="/bookings/new"><button class="dropbtn">New Booking</button></a>
+            </div>
         </nav>
     </div>
         </header>

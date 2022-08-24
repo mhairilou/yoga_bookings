@@ -1,8 +1,42 @@
+/* Whole document */ 
+
 * { 
-    color: azure;
+    color: rgb(47, 49, 49);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0px
 }
-  
+
+body {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+/* LINKS */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* NAVIGATION and DROPDOWNS */
+
+nav {
+  justify-content: center;
+  align-self: center;
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+ 
+}
+
+
 /* Dropdown Button */
 .dropbtn {
   background: none;
@@ -11,6 +45,7 @@
   margin: 10px;
   font-size: 16px;
   border: none;
+  box-shadow: none;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -48,13 +83,12 @@
 .dropdown:hover .dropbtn {background-color: #da8a28;}
 
 
-  table, th, td {
+  table {
     border-collapse: collapse;
-    border: 1px solid;
-    width: auto;
+    width: 100%;
     align-items: center;
     align-self: center;
-    text-align: center;
+    text-align: left;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -62,37 +96,41 @@
 
 
   body {
-    background-color: rgb(19, 41, 50);
+    background-color: rgb(236, 221, 202);
     margin: 0px
   }
   
-  .book-container {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
+ 
+
   .submit-button {
-    background-color: #cd8e37;
-    border-radius: 5px;
+    background-color: #a3c663;
+    border-radius: 50px;
     font-size: medium
   }
   
   header {
-    background-color: #cd8e37;
+    background-color: #724f8a;
     margin: 0px;
     padding: 2px;
     width: 100%;
+    color:rgb(236, 221, 202)
     
   }
-  
-  input[type=submit] {
-    color: black;
-    background-color: #cd8e37;
+  /* the view edit delete buttons on upcoming*/
+  button, input {
+    color: rgb(255, 255, 255);
+    background-color: #da9bff;
     justify-content: center;
-    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 3px 3px;
   }
+
+  
   
   input {
     color: black
@@ -106,85 +144,11 @@
     min-width: 800px;
   }
   
-  a {
-    text-decoration: none;
-    font-size: large;
-  
-  
-  }
   
   .form-inline {
     justify-content: center;
   }
   
-  #single-book {
-  
-    justify-content: center;
-    text-align: center;
-    margin: 100px;
-    
-  
-  
-  }
-  
-  .book {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 260;
-    height: 260px;
-    background-color: #579089;
-    padding: 40px;
-    border: 40px;
-    margin: 40px;
-    border-radius: 40px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 29px 0px;
-    word-wrap: break-word;
-   
-  }
-  
-  .book:hover {
-    background-color: #cd8e37;
-  }
-  
-  h1, h2, h3, h4 {
-    text-align: center;
-    color: white;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    padding: 10px
-    
-  }
-
-  h2 {
-    padding: 30px;
-  }
-  
-  h3 {
-    font-size: x-large;
-  }
 
 
-  nav {
-    justify-content: center;
-    align-self: center;
-    display: inline-block;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-   
-  }
 
-
- 
-  .dropdown-content {
-    text-align: left;
-  }
-  *{
-    margin: 0;
-    padding: 0;
-}
-
-
-ul {
-  text-align: center;
-}

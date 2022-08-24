@@ -15,10 +15,9 @@
     <tr>
         <td>{{ student.first_name}} {{ student.last_name }}</td>
         <td>{{ student.credits}} </td>
-        <td><a href="/students/{{ student.id }}">View</a> </td>  
-        <td><a href="/students/{{ student.id }}/edit">Edit</a></td>
-        <td><form action="/bookings/student/{{ student.id }}/new" method="GET">
-          <input type="submit" value="Make Booking"></form></td>
+        <td><button><a href="/students/{{ student.id }}">View</a></button> </td>  
+        <td><button><a href="/students/{{ student.id }}/edit">Edit</a></button></td>
+        <td><button><a href="/bookings/student/{{ student.id }}/new">Make Booking</button></td>
    </tr>
    {% endfor %}       
 </table>

@@ -57,7 +57,7 @@ def create_booking_for_selected_session(id):
     student = student_repository.select(student_id)
     new_booking = Booking(student, session)
     booking_repository.save(new_booking)
-    return redirect(request.url)
+    return redirect("/sessions/" + session_id)
 
 #DELETE
 @booking_blueprint.route("/bookings/<id>/delete", methods = ["POST"])
