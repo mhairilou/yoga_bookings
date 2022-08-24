@@ -2,24 +2,24 @@
 {% block content %}
 
 <h2>Edit session</h2>
-
+<br>
 <form action="/sessions/{{ session.id }}" method="POST">
-<div>
     <label for="name">Type:</label>
     <input type="text" id="yoga_type" name="yoga_type" value="{{ session.yoga_type }}">
-</div>
-<div>
+<br>
+<br>
     <label for="date">Date:</label>
     <input type="date" id="date" name="date" value="{{ session.date }}">
-</div>
-<div>
+<br>
+<br>
     <label for="duration">Duration:</label>
     <input type="duration" id="duration" name="duration" value="{{ session.duration }}">
-</div>
-<div>
+<br>
+<br>
     <label for="time">Time:</label>
     <input type="time" id="time" name="time" value="{{ session.time }}">
-</div>
+<br>
+<br>
 
 <input type="submit" value="Update">
 </form>

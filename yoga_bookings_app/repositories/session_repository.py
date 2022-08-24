@@ -7,8 +7,13 @@ def save(session):
     sql = "INSERT INTO sessions (yoga_type, duration, date, time) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [session.yoga_type, session.duration, session.date, session.time]
     results = run_sql(sql, values)
+
+    if len(results) == 0:
+        return False
+
     id = results[0]['id']
     session.id = id
+    return True
 
 
 # SELECT ALL

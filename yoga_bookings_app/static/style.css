@@ -1,3 +1,10 @@
+/* FONTS */
+@font-face {
+  font-family: Lemon;
+  src: url(mhairilou/LemonDays.ttf);
+}
+
+
 /* Whole document */ 
 
 * { 
@@ -29,6 +36,12 @@ li {
 
 a {
   text-decoration: none;
+  
+}
+
+#website_name {
+  color: white;
+  font-family: Lemon;
 }
 
 a:hover {
@@ -116,7 +129,7 @@ nav {
   }
 
   tr:nth-child(even) {
-    background: #CCC;
+    background:#f1e1cd;
   }
 
   body {
@@ -133,7 +146,7 @@ nav {
   }
   
   header {
-    background-color: #724f8a;
+    background: url(https://images.unsplash.com/photo-1564497717650-489eb99e8d09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2863&q=80) ;
     margin: 0px;
     padding: 2px;
     width: 100%;
@@ -143,7 +156,7 @@ nav {
   /* the view edit delete buttons on upcoming*/
   button, input {
     color: rgb(255, 255, 255);
-    background-color: #da9bff;
+    background-color: #eaceab;
     justify-content: center;
     padding-left: 10px;
     padding-right: 10px;
@@ -183,4 +196,8 @@ nav {
 
   td, th {
     padding: 8px;
+  }
+
+  .class_container {
+    display: flex;
   }

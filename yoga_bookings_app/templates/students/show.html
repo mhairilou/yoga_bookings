@@ -17,11 +17,11 @@
     </table>
 
 <h2>Bookings:</h2>
-<ul>
-    {%for booking in bookings%}
-    <li>{{booking.session.date.strftime("%A %d %B")}} {{booking.session.time.strftime("%H:%M")}} - {{ booking.session.yoga_type }}</li>
-    {%endfor%}
-</ul>
+<table>
+    <tr>{%for booking in bookings%}
+    <td>{{booking.session.date.strftime("%A %d %B")}} </td> <td> {{booking.session.time.strftime("%H:%M")}} </td><td> <a href="/sessions/{{booking.session.id}}">{{ booking.session.yoga_type }}</a></td>
+    {%endfor%}</tr>
+</table>
 
 
 

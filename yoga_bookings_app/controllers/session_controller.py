@@ -37,9 +37,26 @@ def create_session():
     duration = request.form["duration"]
     date = request.form["date"]
     time = request.form["time"]
+
     new_session = Session(yoga_type, duration, date, time)
-    session_repository.save(new_session)
-    return redirect("/sessions")
+
+    success = session_repository.save(new_session)
+
+    if success:
+        return redirect("/sessions/new/success")
+
+    return redirect("/sessions/new/oops")
+
+#CREATE OOPS
+@session_blueprint.route("/sessions/new/oops", methods = ["GET"])
+def create_session_fail():
+    return render_template("sessions/new_oops.html")
+
+#CREATE HOORAY
+@session_blueprint.route("/sessions/new/success", methods = ["GET"])
+def create_session_success():
+    return render_template("sessions/new_success.html")
+
 
 
 #EDIT

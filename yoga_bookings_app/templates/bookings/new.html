@@ -1,34 +1,32 @@
-
 {% extends "base.html" %}
 {% block content %}
 
 <h2>Add a New Booking</h2>
+<br>
+<form action="/bookings" method="POST" autocomplete="off">
 
-<form action="/bookings" method="POST">
-  <div>
-      <label for="student">Student:</label>
-      <select name="student_id" id="student">
-          {% for student in students%}
-          <option value="{{ student.id }}">
-              {{ student.full_name() }}
-          </option>
-    
-          {% endfor %}
-      </select>
-  </div>
-  <div>
-      <label for="session">Session:</label>
-      <select name="session_id" id="session">
-          {% for session in sessions%}
-          <option value="{{ session.id }}">
-              {{ session.yoga_type }} {{session.date.strftime("%A %d %B")}}
-          </option>
-          {% endfor %}
-      </select>
-  </div>
+    <label for="student">Student:</label>
+    <select name="student_id" id="student">
+        {% for student in students%}
+        <option value="{{ student.id }}">
+            {{ student.full_name() }}
+        </option>
+        {% endfor %}
+    </select>
+<br>
+<br>
+    <label for="session">Session:</label>
+    <select name="session_id" id="session">
+        {% for session in sessions%}
+        <option value="{{ session.id }}">
+            {{session.date.strftime("%A %d %B")}} | {{session.time.strftime("%H:%M")}} | {{ session.yoga_type }}  
+        </option>
+        {% endfor %}
+    </select>
+<br>
+<br>
+    <input type="submit">
 
-      <input type="submit">
-  </div>
 </form>
 
 {% endblock %}
