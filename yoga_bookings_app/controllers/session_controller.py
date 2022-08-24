@@ -52,13 +52,23 @@ def edit_session(id):
 #UPDATE
 @session_blueprint.route("/sessions/<id>", methods = ["POST"])
 def update_session(id):
+   
     yoga_type = request.form["yoga_type"]
     duration = request.form["duration"]
     date = request.form["date"]
     time = request.form["time"]
+    # print(type(date))
     session = Session(yoga_type, duration, date, time, id)
+
     session_repository.update(session)
+    session = session_repository.select(id)
+    # print(type(updated_session.date))
+    # print("what3 " + session2.date + " time " +session2.time+ ": "+session2.duration + ":" + session2.yoga_type)
     return render_template("/sessions/show.html", session = session)
+
+    
+
+
 
 #DELETE
 @session_blueprint.route("/sessions/<id>/delete", methods = ["POST"])
