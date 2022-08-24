@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1> All Students </h1>
+<h2> All Students </h2>
 
 <table>
-    <tr>
-      <th>Name</th>
-      <th>Credits</th>
-      <th> </th>
-      <th> </th>
-      
-    </tr>
-{% for student in students %}
-    <tr>
-        <td>{{ student.first_name}} {{ student.last_name }}</td>
-        <td>{{ student.credits}} </td>
-        <td><button><a href="/students/{{ student.id }}">View</a></button> </td>  
-        <td><button><a href="/students/{{ student.id }}/edit">Edit</a></button></td>
-        <td><button><a href="/bookings/student/{{ student.id }}/new">Make Booking</button></td>
-   </tr>
-   {% endfor %}       
+  <tr>
+    <th>Name</th>
+    <th>Credits</th>
+    <th> </th>
+    <th> </th>
+  </tr>
+
+  {% for student in students %}
+  <tr>
+    <td>{{ student.first_name}} {{ student.last_name }}</td>
+    <td>{{ student.credits}} </td>
+    <td><button><a href="/students/{{ student.id }}">View</a></button> </td>
+    <td><button><a href="/students/{{ student.id }}/edit">Edit</a></button></td>
+    <td><button><a href="/bookings/student/{{ student.id }}/new">Make Booking</button></td>
+  </tr>
+  {% endfor %}
 </table>
 
 

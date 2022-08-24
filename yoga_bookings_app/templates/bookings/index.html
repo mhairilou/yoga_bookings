@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<br>
-<h2>Activity Log</h2>
-<br>
-{% for booking in bookings %}
-    <p>{{ booking.student.full_name() }} booked {{booking.session.yoga_type}} on {{booking.session.date.strftime("%A %d %B")}}</p>
-    <br>
-{% endfor %}
 
+<h2>Activity Log</h2>
+
+<table>
+{% for booking in bookings %}
+    <tr><td>{{ booking.student.full_name() }} booked {{booking.session.yoga_type}} on {{booking.session.date.strftime("%A %d %B")}}</td></tr>
+    
+{% endfor %}
+</table>
 {% endblock %}

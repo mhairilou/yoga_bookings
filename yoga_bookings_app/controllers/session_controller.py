@@ -57,7 +57,7 @@ def update_session(id):
     duration = request.form["duration"]
     date = request.form["date"]
     time = request.form["time"]
-    # print(type(date))
+
     session = Session(yoga_type, duration, date, time, id)
 
     session_repository.update(session)
