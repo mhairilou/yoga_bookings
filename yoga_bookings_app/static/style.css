@@ -8,7 +8,19 @@
   font-family: "Geminimoon";
   src: url(./GeminiMoon.otf);
 }
+@font-face {
+  font-family: "nature";
+  src: url(./Naturalist.ttf);
+}
+@font-face {
+  font-family: "jose";
+  src: url(./JosefinSans-VariableFont_wght.ttf);
+}
 
+h2 {
+  font-family: "nature";
+  font-size: 40px;
+}
 
 /* Whole document */ 
 
@@ -16,6 +28,8 @@
     color: rgb(47, 49, 49);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0px;
+    font-family: "jose";
+
 
 }
 
@@ -46,8 +60,10 @@ a {
 }
 
 #website_name {
-  color: white;
+  color: rgb(47, 49, 49);
   font-family: "Geminimoon";
+  font-size: 50px;
+  
 }
 
 a:hover {
@@ -70,12 +86,13 @@ nav {
 /* Dropdown Button */
 .dropbtn {
   background: none;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 16px;
   margin: 10px;
   font-size: 16px;
   border: none;
   box-shadow: none;
+
 }
 
 .pointer {
@@ -146,14 +163,12 @@ nav {
  
 
   .submit-button {
-    background-color: #a3c663;
+    background-color: #e7a04a;
     border-radius: 50px;
     font-size: medium;
   }
   
   header {
-    background: url(./background.png);
-    backdrop-filter: blur(15px);
   
     margin: 0px;
     padding: 2px;
@@ -204,6 +219,7 @@ nav {
 
   td, th {
     padding: 8px;
+    text-align: center;
   }
 
   .class_container {

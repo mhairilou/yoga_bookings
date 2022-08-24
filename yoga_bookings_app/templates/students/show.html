@@ -13,14 +13,17 @@
         <td>{{student.last_name}}</td>
         <td>{{student.credits}}</td>
         <td><button><a href="/students/{{ student.id }}/edit">Edit</a></button></td> 
+        <td><button><a href="/bookings/student/{{ student.id }}/new">Make Booking</button></td>
     </tr>
     </table>
 
 <h2>Bookings:</h2>
 <table>
-    <tr>{%for booking in bookings%}
-    <td>{{booking.session.date.strftime("%A %d %B")}} </td> <td> {{booking.session.time.strftime("%H:%M")}} </td><td> <a href="/sessions/{{booking.session.id}}">{{ booking.session.yoga_type }}</a></td>
-    {%endfor%}</tr>
+    {%for booking in bookings%}<tr>
+    <td>{{booking.session.date.strftime("%A %d %B")}} </td> 
+    <td> {{booking.session.time.strftime("%H:%M")}} </td>
+    <td> <a href="/sessions/{{booking.session.id}}">{{ booking.session.yoga_type }}</a></td>
+</tr>{%endfor%}
 </table>
 
 
