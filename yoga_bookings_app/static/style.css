@@ -16,14 +16,31 @@
   font-family: "jose";
   src: url(./JosefinSans-VariableFont_wght.ttf);
 }
-
-h2 {
-  font-family: "nature";
-  font-size: 40px;
+@font-face {
+  font-family: "milk";
+  src: url(./MilkyNice.ttf);
 }
 
-/* Whole document */ 
 
+
+
+
+
+
+#website_name {
+  color: rgb(47, 49, 49);
+  font-family: "Geminimoon";
+  font-size: 50px;
+  
+}
+
+h2 {
+  font-family: "milk";
+  font-size: 30px;
+}
+
+
+/* Whole document */ 
 * { 
     color: rgb(47, 49, 49);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -59,12 +76,7 @@ a {
   
 }
 
-#website_name {
-  color: rgb(47, 49, 49);
-  font-family: "Geminimoon";
-  font-size: 50px;
-  
-}
+
 
 a:hover {
   text-decoration: none;
@@ -152,7 +164,7 @@ nav {
   }
 
   tr:nth-child(even) {
-    background:#f1e1cd;
+    background:#f6ece0;
   }
 
   body {

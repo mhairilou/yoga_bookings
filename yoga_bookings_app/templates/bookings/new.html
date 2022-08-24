@@ -3,30 +3,33 @@
 
 <h2>Add a New Booking</h2>
 <br>
+<div class="form-container">
+<ul>
 <form action="/bookings" method="POST" autocomplete="off">
+    <li><label for="student">Student:</label>
+        <select name="student_id" id="student">
+            {% for student in students%}
+            <option value="{{ student.id }}">
+                {{ student.full_name() }}
+            </option>
+            {% endfor %}
+        </select>
+    </li>
+    <br>
 
-    <label for="student">Student:</label>
-    <select name="student_id" id="student">
-        {% for student in students%}
-        <option value="{{ student.id }}">
-            {{ student.full_name() }}
-        </option>
-        {% endfor %}
-    </select>
-<br>
-<br>
-    <label for="session">Session:</label>
-    <select name="session_id" id="session">
-        {% for session in sessions%}
-        <option value="{{ session.id }}">
-            {{session.date.strftime("%A %d %B")}} | {{session.time.strftime("%H:%M")}} | {{ session.yoga_type }}  
-        </option>
-        {% endfor %}
-    </select>
-<br>
-<br>
-    <input type="submit">
+    <li><label for="session">Session:</label>
+        <select name="session_id" id="session">
+            {% for session in sessions%}
+            <option value="{{ session.id }}">
+                {{session.date.strftime("%A %d %B")}} | {{session.time.strftime("%H:%M")}} | {{ session.yoga_type }}
+            </option>
+            {% endfor %}
+        </select>
+    </li>
+    <br>
 
+    <input type="submit" value="Add booking">
 </form>
-
+</div>
+</ul>
 {% endblock %}
