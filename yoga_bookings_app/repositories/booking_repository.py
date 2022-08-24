@@ -58,3 +58,9 @@ def select_all_bookings_by_student_id(student_id):
 def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)
+
+#DELETE BY BOOKING ID
+def delete(id):
+    sql = "DELETE FROM bookings WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

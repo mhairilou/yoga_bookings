@@ -48,7 +48,7 @@ def new_booking_for_selected_student(id):
     return render_template("bookings/new_for_selected_student.html", selected_student = selected_student, sessions= sessions)
 
 
-#CREATE FOR SELECTED SESSION
+#CREATE FOR SELECTED SESSION (DONT'T REMOVE ID EVEN THOUGH IT IS RED!)
 @booking_blueprint.route("/bookings/<id>", methods = ["POST"])
 def create_booking_for_selected_session(id):
     student_id = request.form["student_id"]
@@ -57,4 +57,11 @@ def create_booking_for_selected_session(id):
     student = student_repository.select(student_id)
     new_booking = Booking(student, session)
     booking_repository.save(new_booking)
-    return redirect("/sessions")
+    return redirect(request.url)
+
+#DELETE
+@booking_blueprint.route("/bookings/<id>/delete", methods = ["POST"])
+def delete_booking(id):
+    booking_repository.delete(id)
+    return redirect(request.referrer)
+

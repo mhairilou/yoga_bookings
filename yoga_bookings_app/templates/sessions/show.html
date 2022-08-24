@@ -22,18 +22,28 @@
 
 
 <h4>Students booked into this class:</h4>
+
 <div>
     <ul>
         <li>
     {%for booking in bookings%}
     <a href="/students/{{booking.student.id}}">{{ booking.student.full_name() }}</a>
-    {%endfor%} (Remove)
+
+    <form action="/bookings/{{ booking.id }}/delete" method="POST">
+        <input type="submit" value="Cancel"></form>
+
+    {%endfor%}
         </li>
 
     </ul>
 </div>
-<h4>
+
+
+<div>
     <form action="/bookings/session/{{ session.id }}/new" method="GET">
         <input type="submit" value="Add student"></form>
-</h4>>
+</div>
+
+
+
 {% endblock %}
