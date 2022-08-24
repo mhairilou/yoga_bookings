@@ -12,7 +12,7 @@
 
   {% for session in sessions %}
   <tr>
-    <td>{{ session.date.strftime("%A %d %B")}}</td>
+    <td>{{ session.date.strftime("%A %d %B %Y")}}</td>
     <td>{{ session.time.strftime("%H:%M")}}</td>
     <td>{{ session.yoga_type }}</td>
 

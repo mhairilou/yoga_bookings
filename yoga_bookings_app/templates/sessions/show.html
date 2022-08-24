@@ -12,7 +12,7 @@
     <th>Length</th>
 </tr>
 <tr>
-    <td>{{session.date.strftime("%A %d %B")}}</td>
+    <td>{{session.date.strftime("%A %d %B %Y")}}</td>
     <td>{{session.time.strftime("%H:%M")}}</td>
     <td>{{session.yoga_type}}</td>
     <td>{{session.duration}} minutes</td>
@@ -24,11 +24,16 @@
 <h4>Students booked into this class:</h4>
 <div>
     <ul>
+        <li>
     {%for booking in bookings%}
-    <li>{{ booking.student.full_name() }}</li>
-    {%endfor%}
+    <a href="/students/{{booking.student.id}}">{{ booking.student.full_name() }}</a>
+    {%endfor%} (Remove)
+        </li>
+
     </ul>
 </div>
-
-
+<h4>
+    <form action="/bookings/session/{{ session.id }}/new" method="GET">
+        <input type="submit" value="Add student"></form>
+</h4>>
 {% endblock %}

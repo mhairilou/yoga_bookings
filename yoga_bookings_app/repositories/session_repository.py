@@ -14,7 +14,7 @@ def save(session):
 # SELECT ALL
 def select_all():
     sessions = []
-    sql = "SELECT * FROM sessions"
+    sql = "SELECT * FROM sessions ORDER BY date"
     results = run_sql(sql)
     for result in results:
         session = Session(result["yoga_type"], result["duration"], result["date"], result["time"], result["id"])
