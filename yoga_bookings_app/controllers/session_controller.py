@@ -37,14 +37,11 @@ def create_session():
     duration = request.form["duration"]
     date = request.form["date"]
     time = request.form["time"]
-
     new_session = Session(yoga_type, duration, date, time)
-
+    
     success = session_repository.save(new_session)
-
     if success:
         return redirect("/sessions/new/success")
-
     return redirect("/sessions/new/oops")
 
 #CREATE OOPS

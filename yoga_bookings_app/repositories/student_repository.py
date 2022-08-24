@@ -7,9 +7,14 @@ def save(student):
     sql = "INSERT INTO students (first_name, last_name, credits) VALUES (%s, %s, %s) RETURNING id"
     values = [student.first_name, student.last_name, student.credits]
     results = run_sql(sql, values)
+
+   
+    if len(results) == 0:
+        return False
+
     id = results[0]['id']
     student.id = id
-
+    return True
 
 # SELECT ALL
 def select_all():

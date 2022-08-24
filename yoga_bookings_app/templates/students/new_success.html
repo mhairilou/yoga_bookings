@@ -2,11 +2,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Add a New Student</h2>
+<h2>Magic! You've added a student.</h2>
+<br>
+<h3>Add another Student</h3>
 <br>
 <div class="form-container">
 <ul>
-    <form action="/students" method="POST" autocomplete="off">
+    <form action="/students" method="post" autocomplete="off">
         <li><label for="first_name">First name</label>
         <input type="text" name="first_name" id="first_name"></li>
         <br>

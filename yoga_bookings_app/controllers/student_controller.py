@@ -32,8 +32,21 @@ def create_student():
     last_name = request.form["last_name"]
     credits = request.form["credits"]
     new_student = Student(first_name, last_name, credits)
-    student_repository.save(new_student)
-    return redirect("/students")
+    
+    success = student_repository.save(new_student)
+    if success:
+        return redirect("/students/new/success")
+    return redirect("/students/new/oops")
+
+#CREATE OOPS
+@student_blueprint.route("/students/new/oops", methods = ["GET"])
+def create_student_fail():
+    return render_template("students/new_oops.html")
+
+#CREATE HOORAY
+@student_blueprint.route("/students/new/success", methods = ["GET"])
+def create_student_success():
+    return render_template("students/new_success.html")
 
 
 #EDIT

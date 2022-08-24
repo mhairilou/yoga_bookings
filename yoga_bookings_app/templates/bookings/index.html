@@ -5,7 +5,7 @@
 
 <table>
 {% for booking in bookings %}
-    <tr><td>{{ booking.student.full_name() }} booked {{booking.session.yoga_type}} on {{booking.session.date.strftime("%A %d %B")}}</td></tr>
+    <tr><td>{{ booking.student.full_name() }} was booked into {{booking.session.yoga_type}} at {{booking.session.time.strftime("%H:%M")}} on {{booking.session.date.strftime("%A %d %B")}}</td></tr>
     
 {% endfor %}
 </table>
