@@ -34,11 +34,18 @@ def create_booking():
 
 
 #NEW BOOKING FOR SELECTED SESSION
-@booking_blueprint.route("/bookings/<id>/new")
+@booking_blueprint.route("/bookings/session/<id>/new")
 def new_booking_for_selected_session(id):
     selected_session = session_repository.select(id)
     students = student_repository.select_all()
     return render_template("bookings/new_for_selected_session.html", selected_session = selected_session, students = students)
+
+#NEW BOOKING FOR SELECTED STUDENT
+@booking_blueprint.route("/bookings/student/<id>/new")
+def new_booking_for_selected_student(id):
+    selected_student = student_repository.select(id)
+    sessions = session_repository.select_all()
+    return render_template("bookings/new_for_selected_student.html", selected_student = selected_student, sessions= sessions)
 
 
 #CREATE FOR SELECTED SESSION

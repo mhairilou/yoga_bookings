@@ -17,6 +17,8 @@
         <td>{{ student.credits}} </td>
         <td><a href="/students/{{ student.id }}">View</a> </td>  
         <td><a href="/students/{{ student.id }}/edit">Edit</a></td>
+        <td><form action="/bookings/student/{{ student.id }}/new" method="GET">
+          <input type="submit" value="Make Booking"></form></td>
    </tr>
    {% endfor %}       
 </table>

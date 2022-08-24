@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<h3> What class does {{selected_student.full_name()}} wish to attend? </h3>
+
+<form action="/bookings/<id>" method="POST">
+  <div>
+
+      <label for="session">Session:</label>
+      <select name="session_id" id="session">
+          {% for session in sessions %}
+          <option value="{{ session.id }}">
+              {{ session.date.strftime("%A %d %B")}} | {{session.time.strftime("%H:%M")}} | {{ session.yoga_type }} 
+          </option>
+          {% endfor %}
+      </select>
+
+  <div>
+    <input type="hidden" id="student_id" name="student_id" value="{{ selected_student.id }}">
+  </div>
+
+  </div>
+
+
+      <input type="submit">
+  </div>
+</form>
+
+{% endblock %}
