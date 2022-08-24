@@ -1,33 +1,30 @@
-
 {% extends "base.html" %}
 {% block content %}
 
-<h2>{{ selected_session.yoga_type }} </h2>
-<h4> {{selected_session.date.strftime("%A %d %B")}} at {{ selected_session.time.strftime("%H:%M") }} </h4>
-
+<h3>{{ selected_session.yoga_type }} </h3>
+<br>
+<h4>{{selected_session.date.strftime("%A %d %B")}} at {{ selected_session.time.strftime("%H:%M") }} </h4>
+<br>
 <h3> Who would you like to book in? </h3>
-
+<br>
 <form action="/bookings/<id>" method="POST">
-  <div>
+  <label for="student">Student:</label>
+  <select name="student_id" id="student">
+    {% for student in students%}
+    <option value="{{ student.id }}">
+      {{ student.full_name() }}
+    </option>
+    {% endfor %}
+  </select>
+  <br>
 
-      <label for="student">Student:</label>
-      <select name="student_id" id="student">
-          {% for student in students%}
-          <option value="{{ student.id }}">
-              {{ student.full_name() }}
-          </option>
-          {% endfor %}
-      </select>
+  <input type="hidden" id="session_id" name="session_id" value="{{ selected_session.id }}">
 
-  <div>
-    <input type="hidden" id="session_id" name="session_id" value="{{ selected_session.id }}">
-  </div>
-
-  </div>
+  <br>
 
 
-      <input type="submit">
-  </div>
+  <input type="submit">
+
 </form>
 
 {% endblock %}

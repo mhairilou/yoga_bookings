@@ -21,6 +21,11 @@
                 <input type="submit" value="Edit">
             </form>
         </td>
+        <td>
+            <form action="/bookings/session/{{ session.id }}/new" method="GET">
+                <input type="submit" value="Add booking">
+            </form>
+        </td>
     </tr>
 </table>
 
@@ -41,10 +46,6 @@
 </table>
 
 
-
-<form action="/bookings/session/{{ session.id }}/new" method="GET">
-    <input type="submit" value="Add student">
-</form>
 
 
 

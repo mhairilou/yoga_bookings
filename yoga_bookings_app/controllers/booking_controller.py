@@ -21,6 +21,13 @@ def new_booking():
     students = student_repository.select_all()
     return render_template("bookings/new.html", sessions = sessions, students = students)
 
+#NEW AFTER SUCCESS
+@booking_blueprint.route("/bookings/new/success")
+def new_booking_success():
+    sessions = session_repository.select_all()
+    students = student_repository.select_all()
+    return render_template("bookings/new_success.html", sessions = sessions, students = students)
+
 #CREATE
 @booking_blueprint.route("/bookings", methods = ["POST"])
 def create_booking():
@@ -30,7 +37,7 @@ def create_booking():
     student = student_repository.select(student_id)
     new_booking = Booking(student, session)
     booking_repository.save(new_booking)
-    return redirect("/bookings/new")
+    return redirect("/bookings/new/success")
 
 
 #NEW BOOKING FOR SELECTED SESSION

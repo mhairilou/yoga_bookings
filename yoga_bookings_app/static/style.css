@@ -1,7 +1,12 @@
 /* FONTS */
 @font-face {
-  font-family: Lemon;
-  src: url(mhairilou/LemonDays.ttf);
+  font-family: "Lemon";
+  src: url(./LemonDays.ttf);
+}
+
+@font-face {
+  font-family: "Geminimoon";
+  src: url(./GeminiMoon.otf);
 }
 
 
@@ -10,7 +15,8 @@
 * { 
     color: rgb(47, 49, 49);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 0px
+    margin: 0px;
+
 }
 
 body {
@@ -41,7 +47,7 @@ a {
 
 #website_name {
   color: white;
-  font-family: Lemon;
+  font-family: "Geminimoon";
 }
 
 a:hover {
@@ -146,7 +152,9 @@ nav {
   }
   
   header {
-    background: url(https://images.unsplash.com/photo-1564497717650-489eb99e8d09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2863&q=80) ;
+    background: url(./background.png);
+    backdrop-filter: blur(15px);
+  
     margin: 0px;
     padding: 2px;
     width: 100%;
