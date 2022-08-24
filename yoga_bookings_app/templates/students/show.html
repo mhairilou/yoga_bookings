@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1> {{student.first_name}} {{student.last_name}}  </h1>
-<h2> Credits: {{student.credits}} </h2>
-
-<a href="/students/{{ student.id }}/edit">Edit details</a>
-
+<h2> Student Details </h2>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Credits</th>
+    </tr>
+    <tr>
+        <td>{{student.first_name}}</td>
+        <td>{{student.last_name}}</td>
+        <td>{{student.credits}}</td>
+        <td><a href="/students/{{ student.id }}/edit">Edit</a></td> 
+    </tr>
+    </table>
 
 <h2>Bookings:</h2>
 <ul>
     {%for booking in bookings%}
-    <li>{{booking.session.date.strftime("%A %d %B")}} - {{ booking.session.yoga_type }}</li>
+    <li>{{booking.session.date.strftime("%A %d %B")}} {{booking.session.time.strftime("%H:%M")}} - {{ booking.session.yoga_type }}</li>
     {%endfor%}
 </ul>
 

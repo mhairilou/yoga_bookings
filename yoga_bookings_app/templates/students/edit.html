@@ -3,29 +3,24 @@
 
 <h2>Edit Student Details</h2>
 
-<h3>Current details:</h3>
-
-<p> First Name: {{student.first_name}} </p>
-<p> Last Name: {{student.last_name}}</p>
-<p> Credits: {{student.credits}}</p>
-
-<h3>New details</h3>
 <form action="/students/{{ student.id }}" method="POST">
-    <div>
-        <label for="first_name">First name</label>
-        <input type="text" id="first_name" name="first_name" value="{{ first_name }}">
-    </div>
-    <div>
-        <label for="last_name">Last name</label>
-        <input type="text" id="last_name" name="last_name" value="{{ last_name }}">
-    </div>
-    <div>
-        <label for="credits">Credits</label>
-        <input type="number" id="credits" name="credits" value="{{ credits }}">
-    </div>
-    <div>
-        <input type="submit" value="Update">
-    </div>
-</form>
 
+<div>
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" value="{{ student.first_name }}">
+</div>
+
+<div>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" value="{{ student.last_name }}">
+</div>
+
+<div>
+    <label for="credits">Credits:</label>
+    <input type="number" id="credits" name="credits" value="{{ student.credits }}">
+</div>
+
+
+<input type="submit" value="Update">
+</form>
 {% endblock %}

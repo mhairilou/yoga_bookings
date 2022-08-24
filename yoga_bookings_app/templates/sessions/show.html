@@ -22,11 +22,13 @@
 
 
 <h4>Students booked into this class:</h4>
-<ul>
+<div>
+    <ul>
     {%for booking in bookings%}
-    {{ booking.student.full_name() }}
+    <li>{{ booking.student.full_name() }}</li>
     {%endfor%}
-</ul>
+    </ul>
+</div>
 
 
 {% endblock %}
