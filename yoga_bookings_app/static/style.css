@@ -46,8 +46,7 @@ h2 {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0px;
     font-family: "jose";
-
-
+    
 }
 
 body {
@@ -149,7 +148,7 @@ nav {
   table {
     border-collapse: separate;
     border-spacing: 0;
-    border-radius: 5px;
+    border-radius: 30px;
     width: calc(100% - 2*64px);
     margin: 32px 64px;
     align-items: center;
@@ -161,13 +160,21 @@ nav {
 
   tr {
     height: 40px;
+   
   }
+
+
 
   tr:nth-child(even) {
     background:#f6ece0;
   }
+  tr:nth-child(odd) {
+    background:#fffffe;
+  }
 
   body {
+    
+
     background-color: rgb(255, 255, 255);
     margin: 0px
   }
@@ -185,8 +192,8 @@ nav {
     margin: 0px;
     padding: 2px;
     width: 100%;
-    color:rgb(236, 221, 202)
-    
+    color:rgb(236, 221, 202);
+   
   }
   /* the view edit delete buttons on upcoming*/
   button, input {
@@ -232,7 +239,11 @@ nav {
   td, th {
     padding: 8px;
     text-align: center;
+   
   }
+
+
+
 
   .class_container {
     display: flex;
