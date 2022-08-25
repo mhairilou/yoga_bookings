@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2> Upcoming classes: </h2>
+<h2> Upcoming classes</h2>
+<br>
+<br>
+<form action="/sessions/new" method="GET" autocomplete="off">
+        <input type="submit" class="submit-button" value="Add New Class">
+      </form>
 
 <table>
         <tr>

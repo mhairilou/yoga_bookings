@@ -8,7 +8,7 @@
 <form action="/bookings/<id>" method="POST">
 
 
-  <label for="session">Session:</label>
+  
   <select name="session_id" id="session">
     {% for session in sessions %}
     <option value="{{ session.id }}">
@@ -19,7 +19,7 @@
 <br>
   <input type="hidden" id="student_id" name="student_id" value="{{ selected_student.id }}">
 <br>
-  <input type="submit">
+  <input type="submit" class="submit-button" value="Book">
 
 </form>
 
