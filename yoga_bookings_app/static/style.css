@@ -25,12 +25,11 @@
 
 
 
-
-
 #website_name {
-  color: rgb(47, 49, 49);
+  
   font-family: "Geminimoon";
   font-size: 50px;
+  
   
 }
 
@@ -47,7 +46,7 @@ h2 {
 
 /* Whole document */ 
 * { 
-    color: rgb(47, 49, 49);
+    color: rgb(21, 22, 22);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0px;
     font-family: "jose";
@@ -56,6 +55,8 @@ h2 {
 
 body {
   text-align: center;
+  background-image: url("./Gradient\ background\ linktree\ \(1\).png");
+  background-size: cover;
 }
 
 .container {
@@ -126,7 +127,7 @@ nav {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color:#f0fbe9;
   min-width: 160px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   z-index: 1;
@@ -141,7 +142,7 @@ nav {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {background-color: #92b080;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
@@ -161,6 +162,7 @@ nav {
     text-align: left;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    background-color: #fffbf7;
   }
 
   tr {
@@ -168,15 +170,22 @@ nav {
    
   }
 
+  th {
+    background: none;
+    padding: none;
+  }
 
 
   tr:nth-child(even) {
     background:#f6ece0;
+    backdrop-filter: blur;
   }
-  tr:nth-child(odd) {
+  /* tr:nth-child(odd) {
     background:#fffffe;
-  }
+  } */
 
+  
+  
   body {
     
 
@@ -204,7 +213,7 @@ nav {
   /* the view edit delete buttons on upcoming*/
   button, input {
     color: rgb(255, 255, 255);
-    background-color: #eaceab;
+    background-color: #eac6ab;
     justify-content: center;
     padding-left: 10px;
     padding-right: 10px;

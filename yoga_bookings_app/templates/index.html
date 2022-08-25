@@ -1,7 +1,45 @@
-{% extends "base.html" %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>BB Bookings</title>
+</head>
+<body>
+    <header>
+        <br>
+        <h1><a href="/" id="website_name">Bibbidi Bobbidi Bookings</a></h1>
+    </header>
+<br>
+<h2>Where to begin?</h2>
+<br>
+<div id="dropdown nav">
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn">Classes</button>
+            <div class="dropdown-content">
+              <a href="/sessions">All classes</a>
+              <a href="/sessions/new">Add a class</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Students</button>
+            <div class="dropdown-content">
+              <a href="/students">All students</a>
+              <a href="/students/new">Add new student</a>
+            </div>
+        </div>
+        <div class="dropdown">
+        <a href="/bookings"><button class="dropbtn pointer">Activity Log</button></a>
+        </div>
+        <div class="dropdown">
+        <a href="/bookings/new"><button class="dropbtn pointer">New Booking</button></a>
+        </div>
+    </nav>
+</div>
 
-<h2>This is the homepage!</h2>
-
-
-{% endblock %}
+    </div>
+</body>
+</html>
