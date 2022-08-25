@@ -34,6 +34,11 @@
   
 }
 
+h1 {
+
+padding-top: 50px;
+}
+
 h2 {
   font-family: "milk";
   font-size: 30px;
@@ -142,7 +147,7 @@ nav {
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #da8a28;}
+.dropdown:hover .dropbtn {background-color: #92b080;}
 
 
   table {
@@ -182,7 +187,7 @@ nav {
  
 
   .submit-button {
-    background-color: #e7a04a;
+    background-color: #92b080;
     border-radius: 50px;
     font-size: medium;
   }
@@ -191,6 +196,7 @@ nav {
   
     margin: 0px;
     padding: 2px;
+    padding-top: 50px;
     width: 100%;
     color:rgb(236, 221, 202);
    
