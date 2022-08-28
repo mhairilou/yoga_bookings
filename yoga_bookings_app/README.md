@@ -6,13 +6,13 @@ The app allows you to add, edit and view sessions, students and bookings. It has
 
 # Step by step process of how to get the app working (including the command you would type into the terminal)
 To set up the app, open a terminal (command + space on mac) and type:
-
+ ```
 dropdb yoga_bookings
 createdb yoga_bookings
 psql -d yoga_bookings -f db/yoga_bookings.sql
 python3 console.py
 flask run
-
+```
 on mac press command and click on the url (http://127.0.0.1:4999)
 Go to your browser to view the app.
 
