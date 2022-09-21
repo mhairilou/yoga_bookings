@@ -4,7 +4,7 @@
 This project uses Flask, postgresql and python3.
 
 ## A project brief/a list of things the app can do
-The app allows you to add, edit and view sessions, students and bookings. It has pages that display all sessions/classes and all students. You can also view more details by clicking "view". The 
+The app allows you to add, edit and view sessions, students and bookings. It has pages that display all sessions/classes and all students. You can also view more details by clicking "view".
 
 ## Step by step process of how to get the app working
 To set up the app, open a terminal (command + space on mac) and type:
